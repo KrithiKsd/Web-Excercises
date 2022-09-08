@@ -1,0 +1,116 @@
+
+body {
+    background-color:rgb(239 237 239);
+    color: white;
+}
+.background-css-body {
+    background-image: linear-gradient(to right, #f7d473 , #d3cbb4);
+}
+.background-css {
+    background-color:rgb(239 237 239);
+}
+.wrapper {
+    position: relative;
+    width:100%;
+    top: 150px;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+.container-fluid {
+    position: relative;
+    color: #312f2f;
+}
+.navbar-contents {
+    font-weight: bold;
+}
+.navbar-contents, .footer, .button-custom {
+    background-color:#071e36 !important;
+}
+.adjust-nav {
+    padding-right: 10px;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height:50px;
+    width: 100%;
+    line-height:30px;
+    margin-bottom: 0px;
+    text-align: center;
+    clear: both;
+}
+.logo {
+    border: 2px solid #000;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    height: 70px;
+    width: 200px;
+}
+.clr {
+    clear: both;
+}
+.image-item, .image-item-index {
+    height: 100%;
+    width: 100%;
+}
+
+.break-line {
+    height: 30px;
+    border-bottom: 1px solid #807e7e;
+}
+.action-btns {
+      position: relative;
+      top: 30%;
+}
+.tradeForm {
+    box-shadow:10px 10px 5px grey;
+    border-radius: 5px; 
+    border:2px solid gray;
+    background-color:rgb(239 237 239);
+}
+.box-shadow-css {
+    box-shadow:10px 10px 5px grey;
+    border-radius: 5px; 
+    background-image: linear-gradient(to right, #f7d473 , #d3cbb4);
+}
+.cards {
+    box-shadow:8px 8px 3px gray;
+    border-radius: 5px; 
+}
+.card-title {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 16px;
+}
+.card-items li{
+        line-height: 2em;
+}
+
+@media only screen and (max-width: 768px) {
+    .header ul {
+        position: relative;
+        left: 25px;
+    }
+    .adjust-nav {
+        top:25px;
+    }
+    .footer {
+        position: relative;
+    }
+    .prod-title {
+        text-align: center;
+    }
+    .navbar-contents  {
+        position: relative;
+    }
+    .wrapper {
+        position: relative;
+        width:100%;
+        top: 10px;
+        min-height: 100%;
+        overflow-x: hidden;
+    }
+    
+  }
