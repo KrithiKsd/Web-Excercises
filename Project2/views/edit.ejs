@@ -20,7 +20,14 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="category">Category</label>
       <div class="col-sm-10">
-        <input type="text" id="category" name="category" placeholder="Categories" value="<%= item.category %>" required>
+       
+        <select class="form-control" id="category" name="category" >
+          <option selected disabled><%= item.category %></option>
+          <option>Strategy Games</option>
+          <option>Party Games</option>
+          <option>Thematic Games</option>
+        </select>
+        
     </div>
     </div>
     <div class="form-group">
@@ -39,9 +46,23 @@
       </div>
     
     <div class="form-group">
-      <label class="control-label col-sm-2" for="suggestedAge">Image URL</label>
+      <label class="control-label col-sm-2" for="imageurl">Image URL</label>
       <div class="col-sm-10">          
         <input type="text" id="image-url-input" name="imageurl" placeholder="imageURL">
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="suggestedAge">Suggested Age:</label>
+      <div class="col-sm-10">       
+        <input type="text" class="form-control" id="suggestedAge" value="<%= item.suggestedAge %>" name="suggestedAge">     
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="publishedBy">Publisher:</label>
+      <div class="col-sm-10">          
+        <input type="text" class="form-control" id="publishedBy" value="<%= item.publishedBy %>" name="publishedBy">
       </div>
     </div>
     

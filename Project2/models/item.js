@@ -8,91 +8,91 @@ const items=[
     id: '1',
     name: 'A Game of Thrones',
     category:'Strategy Games',
-    details:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nluctus interdum bibendum in elit. Praesent egestas augue nec magna vehicula efficitur.',
-    status:'',
+    details:'The Wars to Come features everything you and your friends need to expand your games of The Iron Throne to seven players, including two new Houses—House Greyjoy and House Martell—and their ten new leaders.',
+    status:'Active',
     imageurl:'',
-    suggestedAge:'10',
-    publishedBy: ''
+    suggestedAge:'18+',
+    publishedBy: 'Fantasy Flight Games'
 },
 {
     id: '2',
     name: 'Kingdom Builder',
     category:'Strategy Games',
-    details:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nluctus interdum bibendum in elit. Praesent egestas augue nec magna vehicula efficitur.',
-    status:'',
+    details:'In Kingdom Builder the players create their own Kingdoms by skillfully building their settlements and aiming to earn the most gold at the end of the game.',
+    status:'Active',
     imageurl:'',
-    suggestedAge:'',
-    publishedAt: ''
+    suggestedAge:'8+',
+    publishedAt: 'Queen Games'
 },
 {
     id: '3',
     name: 'Cave Troll',
     category:'Strategy Games',
-    details:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nluctus interdum bibendum in elit. Praesent egestas augue nec magna vehicula efficitur.',
-    status:'',
+    details:'Gather your team of heroes and monsters and enter the dungeon in Cave Troll! In this classic board game of strategic positioning, two to four player command heroes and monsters, moving them through a dungeon labyrinth to claim ancient treasures.',
+    status:'Active',
     imageurl:'',
-    suggestedAge:'',
-    publishedBy: ''
+    suggestedAge:'10+',
+    publishedBy: 'Fantasy Flight Games'
 },
 {
     id: '4',
     name: 'The Resistance',
     category:'Party Games',
-    details:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nluctus interdum bibendum in elit. Praesent egestas augue nec magna vehicula efficitur.',
-    status:'',
+    details:'The Empire must fall. Our mission must succeed. By destroying their key bases, we will shatter Imperial strength and liberate our people. Yet spies have infiltrated our ranks, ready for sabotage. We must unmask them. In five nights we reshape destiny or die trying. We are the Resistance!',
+    status:'Active',
     imageurl:'',
-    suggestedAge:'',
-    publishedBy: ''
+    suggestedAge:'17+',
+    publishedBy: 'Indie Boards & Cards'
 },
 {
     id: '5',
     name: 'Cards Against Humanity',
     category:'Party Games',
-    details:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nluctus interdum bibendum in elit. Praesent egestas augue nec magna vehicula efficitur.',
-    status:'',
+    details:'The first official expansion for Cards Against Humanity, featuring 80 brand-new white cards, 20 brand-new black cards, and, for the first time, blank cards which will allow you to seamlessly add your own inside jokes to the game.',
+    status:'Active',
     imageurl:'',
-    suggestedAge:'',
-    publishedBy: ''
+    suggestedAge:'16+',
+    publishedBy: 'Cards Against Humanity LLC, Estrela'
 },
 {
     id: '6',
     name: 'Dixit',
     category:'Party Games',
-    details:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nluctus interdum bibendum in elit. Praesent egestas augue nec magna vehicula efficitur.',
-    status:'',
+    details:'One player is the storyteller for the turn and looks at the images on the 6 cards in her hand. From one of these, she makes up a sentence and says it out loud (without showing the card to the other players).',
+    status:'Active',
     imageurl:'',
-    suggestedAge:'',
-    publishedBy: ''
+    suggestedAge:'18+',
+    publishedBy: 'Libellud'
 },
 {
     id: '7',
     name: 'Elder Sign',
     category:'Thematic Games',
-    details:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nluctus interdum bibendum in elit. Praesent egestas augue nec magna vehicula efficitur.',
-    status:'',
+    details:'Gilman felt that the twilight abysses around him were those of the fourth dimension. Those organic entities whose motions seemed least flagrantly irrelevant and unmotivated were probably projections of life-forms from our own planet, including human beings.',
+    status:'Active',
     imageurl:'',
-    suggestedAge:'',
-    publishedBy: ''
+    suggestedAge:'10+',
+    publishedBy: 'Fantasy Flight Games '
 },
 {
     id: '8',
     name: 'Munchkin',
     category:'Thematic Games',
-    details:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nluctus interdum bibendum in elit. Praesent egestas augue nec magna vehicula efficitur.',
-    status:'',
+    details:'In Munchkin Dungeon, players take on the role of Munchkins adventuring through a dungeon.',
+    status:'Active',
     imageurl:'',
-    suggestedAge:'',
-    publishedBy: ''
+    suggestedAge:'14+',
+    publishedBy: 'Steve Jackson Games'
 },
 {
     id: '9',
     name: 'Nothing Personal',
     category:'Thematic Games',
-    details:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nluctus interdum bibendum in elit. Praesent egestas augue nec magna vehicula efficitur.',
-    status:'',
+    details:'The Capo is getting old and about to retire. You think. Maybe it is time for you to make your moves from behind the scenes, to put the gangsters into play that support your goals. Will you gain the most respect?',
+    status:'Active',
     imageurl:'',
-    suggestedAge:'',
-    publishedBy: ''
+    suggestedAge:'8+',
+    publishedBy: 'Game Salute, Dice Tower Games'
 }
 ];
 
