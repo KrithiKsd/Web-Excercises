@@ -97,12 +97,12 @@ const items=[
 ];
 
 exports.save = function(item){
-    console.log("Item to save: "+item);
+    //console.log("Item to save: "+item);
     item.id = uuidv4();
     item.status='Active Status';
     //item.createdAt = DateTime.local(2022, 09, 29, 18, 0).toLocaleString(DateTime.DATETIME_SHORT);
     items.push(item);
-    console.log('All items:'+items);
+   // console.log('All items:'+items);
 }
 
 exports.updateById= function(id, newItem){

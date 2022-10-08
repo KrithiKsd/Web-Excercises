@@ -3,14 +3,14 @@ const { DateTime } = require("luxon");
 
 exports.trades = (req, res, next) => {
     let grouped = model.allItemsByCategory();
-    console.log(grouped);
+    //console.log(grouped);
     res.render('trades',{grouped});
 };
 
 exports.create = (req, res, next) => {
     let item= req.body;
-    console.log(item);
-    console.log("Item at create: "+item);
+    //console.log(item);
+    //console.log("Item at create: "+item);
     model.save(item);
     res.redirect('/trades');
 };
@@ -38,7 +38,7 @@ exports.show = (req, res, next) => {
 
     let id = req.params.id;
     let item= model.findById(id);
-    console.log(item);
+    //console.log(item);
     if(item){
           res.render('trade', {item});
      }else{
@@ -103,8 +103,10 @@ exports.update = (req, res, next) => {
     });*/
     let item= req.body;
     let id= req.params.id;
-    console.log(item);
-    console.log(id);
+    console.log(JSON.stringify("update changed",item.category));
+   // console.log("at update"+item.category);
+    console.log("body at update"+item);
+   // console.log(id);
     if(model.updateById(id,item)){
         res.redirect('/trades/'+id);
     }else{
