@@ -16,26 +16,6 @@ exports.create = (req, res, next) => {
 };
 
 exports.show = (req, res, next) => {
-   
-    /*let id = req.params.id;
-    console.log(id);
-    if(!id.match(/^[0-9a-fA-F]{24}$/)) {
-        let err = new Error('Invalid item id');
-        err.status = 400;
-        return next(err);
-    }
-    model.findById(id)
-    .then(item=>{
-        if(item){
-            return res.render('trade', {item});
-        } else {
-            let err = new Error('Cannot find an item with id ' + id);
-            err.status = 404;
-            next(err);
-        }
-    })
-    .catch(err=>next(err));*/
-
     let id = req.params.id;
     let item= model.findById(id);
     //console.log(item);
@@ -49,24 +29,6 @@ exports.show = (req, res, next) => {
 };
 
 exports.edit = (req, res, next) => {
-    /*let id = req.params.id;
-    if(!id.match(/^[0-9a-fA-F]{24}$/)) {
-        let err = new Error('Invalid item id');
-        err.status = 400;
-        return next(err);
-    }
-    model.findById(id)
-    .then(item=>{
-        if(item) {
-            return res.render('edit', {item});
-        } else {
-            let err = new Error('Cannot find an item with id ' + id);
-            err.status = 404;
-            next(err);
-        }
-    })
-    .catch(err=>next(err));*/
-
     let id = req.params.id;
     let item= model.findById(id);
     if(item){
@@ -79,28 +41,6 @@ exports.edit = (req, res, next) => {
 };
 
 exports.update = (req, res, next) => {
-   /* let connection = req.body;
-    let id = req.params.id;
-    if(!id.match(/^[0-9a-fA-F]{24}$/)) {
-        let err = new Error('Invalid item id');
-        err.status = 400;
-        return next(err);
-    }
-    model.findByIdAndUpdate(id, connection, {useFindAndModify: false, runValidators: true})
-    .then(item=>{
-        if(item) {
-            res.redirect('/trades/'+id);
-        } else {
-            let err = new Error('Cannot find an item with id ' + id);
-            err.status = 404;
-            next(err);
-        }
-    })
-    .catch(err=> {
-        if(err.name === 'ValidationError')
-            err.status = 400;
-        next(err);
-    });*/
     let item= req.body;
     let id= req.params.id;
     console.log(JSON.stringify("update changed",item.category));

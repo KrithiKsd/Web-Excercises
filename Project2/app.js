@@ -30,8 +30,6 @@ app.get('/',(req,res)=>{
 app.use('/',mainRoutes);
 app.use('/trades',tradeRoutes);
 
-//app.use('/new',storyRoutes);
-
 //error handling
 app.use((req,res,next)=>{
    let err= new Error('The server can not locate '+req.url)
