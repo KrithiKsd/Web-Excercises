@@ -1,5 +1,7 @@
 const { DateTime } = require("luxon");
 const {v4:uuidv4} = require('uuid');
+const {isEmpty} = require('lodash');
+const _ = require("lodash");
 
 const items=[
 {
@@ -135,3 +137,15 @@ exports.find = () => items;
 
 exports.findById = id => items.find(item=>item.id === id);
 
+exports.allItemsByCategory = function () {
+    let grouped = _.reduce(items, (result, item) => {
+        (result[item.category] || (result[item.category] = [])).push(item);
+        return result;
+    }, {});
+    
+    console.log(grouped);
+
+    if (!isEmpty(grouped))
+        return grouped;
+    else return false;
+}

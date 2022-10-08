@@ -2,8 +2,9 @@ const model = require('../models/item');
 const { DateTime } = require("luxon");
 
 exports.trades = (req, res, next) => {
-    let items = model.find();
-    res.render('trades',{items});
+    let grouped = model.allItemsByCategory();
+    console.log(grouped);
+    res.render('trades',{grouped});
 };
 
 exports.create = (req, res, next) => {

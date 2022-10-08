@@ -2,15 +2,21 @@
 
 
 <div class = "content">
-  <h3>All stories listed here!</h3> 
+  <h3>All items listed here!</h3> 
 
-  <%if(items.length){%>
-    <%items.forEach(item=>{%>
-      <a href="/trades/<%=item.id%>"><p><%=item.name%></p></a>
-  <%});
-  }else{%>
-  <p>There are no stories to display!</p>
-  <%}%>
+   <% if(grouped){ for(let key in grouped) { let items=grouped[key]; %>
+            <h4>
+                <%=key%>
+            </h4>
+            <%items.forEach(item=>{ %>
+                <ul>
+                    <li>
+                      <a href="/trades/<%=item.id%>"><p><%=item.name%></p></a>
+                    </li>
+                </ul>
+                <% }); }}else{ %>
+                    <p>There are no items to display.</p>
+                    <%}%>
 
   <br>
   <br>
