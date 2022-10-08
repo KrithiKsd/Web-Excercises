@@ -3,35 +3,44 @@
 <div class="container" style="background: linear-gradient(to right, rgba(204, 83, 51, 0.6), rgba(35, 7, 77, 0.6));;">
     
     <div class="centered" style="color: white;">
-        <h3>A Game of Throne</h3>
+
+        <h3><%= item.name%></h3>
 
         <div class="media">
           <div class="media-left media-top">
             <img src="../images/A_Game_of_Thrones.jpg" class="media-object" style="width:250px" alt="A_Game_of_Thrones">
           </div>
           <div class="media-body">
-            <h3 class="media-heading" >Category: Strategy Game</h3>
-            <h4 class="media-heading">Published By: Fantasy Flight Games</h4>
-            <h4 class="media-heading">Suggested Age: 12+</h4>
-           
-            <p> When you play the game of thrones, you win or you die. There is no middle ground.
-                -Cersei Lannister
-                
-                Across the Seven Kingdoms, the Great Houses of Westeros struggle to control the Iron Throne. The battle begins here in the A Game of Thrones Core Game. The beloved heroes, villains, locations, and events of George R.R. Martin's A Song of Ice and Fire saga come to life in this customizable card game. Players take control of the Starks, Baratheons, Lannisters, or Targaryens and attempt to plot, fight, conspire, manipulate, and bribe their way to victory.
-                The A Game of Thrones card game can be played in a multiplayer melee format with 3-4 players, or in a one-on-one joust format with 2 players. But whichever format you choose, the game has only just begun! In the world of the Living Card Game, hundreds of additional cards are available separately, allowing players to customize the four houses included here, or create entirely original decks.
-                Welcome to A Game of Thrones: The Card Game, where you'll experience George R.R. Martin's Westeros like never before!</p>
+            <h3 class="media-heading" >Category: <%=item.category%></h3>
+            <h4 class="media-heading">Published By: <%=item.publishedBy%></h4>
+            <h4 class="media-heading">Suggested Age: <%=parseInt(item.suggestedAge)%></h4>
+            
+            <p><%=item.details%> </p>
            
             </div>
         </div>
        
+        <br>
+        <br>
+
+        
+        <form>
+            <button type = 'submit' 
+            class="btn btn-lg btn-primary button-custom" 
+            formmethod = "GET" formaction = "/trades/<%=item.id%>/edit">Edit</button>
+            
+            <button type = 'submit' class="btn btn-lg btn-primary button-custom" 
+            formmethod = "POST" formaction = "/trades/<%= item.id%>?_method=DELETE">Delete</button>
+
+        </form>
         <hr>
         <div class="media" style="text-align: center;">
         <h5><b>Do you want to trade this board game?</b></h5>  
         <br />
         <div class="action-btns text-center">  
-            <a href="trades.html" class="btn btn-lg btn-primary button-custom"> Trade Now 
+            <a href="/trades" class="btn btn-lg btn-primary button-custom"> Trade Now 
             </a> &nbsp; &nbsp;
-            <a href="trades.html" class="btn btn-lg btn-default">
+            <a href="/trades" class="btn btn-lg btn-default">
                 Rate Now 
             </a>
         </div>

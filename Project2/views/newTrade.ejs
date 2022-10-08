@@ -7,7 +7,13 @@
       <div class="container-fluid">
         <h4>Enter your trade information!</h4>
         <br>
-  <form class="form-horizontal" action="/action_page.php">
+  <form class="form-horizontal" action = '/trades' method = 'POST'>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Name:</label>
+      <div class="col-sm-10">          
+        <input type="text" class="form-control" id="name" placeholder="Enter BG Name" name="name">
+      </div>
+    </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="category">Category</label>
       <div class="col-sm-10">
@@ -15,27 +21,36 @@
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="title">Name:</label>
-      <div class="col-sm-10">          
-        <input type="text" class="form-control" id="title" placeholder="Enter BG Name" name="title">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="publisher">Publisher:</label>
-      <div class="col-sm-10">          
-        <input type="text" class="form-control" id="publisher" placeholder="Enter BG publisher" name="publisher">
-      </div>
-    </div>
-    <div class="form-group">
       <label class="control-label col-sm-2" for="details">Details:</label>
-      <div class="col-sm-10">          
-         <textarea class="form-control" rows="5" id="details" placeholder="Enter details"></textarea>
+      <div class="col-sm-10">   
+        <input type="text" class="form-control" id="details" placeholder="Enter details" name="details">       
+         
       </div>
     </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="suggestedAge">Image URL</label>
+      <div class="col-sm-10">          
+        <input type="text" id="image-url-input" name="imageurl" placeholder="imageURL">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="suggestedAge">Suggested Age:</label>
+      <div class="col-sm-10">       
+        <input type="text" class="form-control" id="suggestedAge" placeholder="Enter suggested age" name="suggestedAge">     
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="publishedBy">Publisher:</label>
+      <div class="col-sm-10">          
+        <input type="text" class="form-control" id="publishedBy" placeholder="Enter BG publisher" name="publishedBy">
+      </div>
+    </div>
+   
     
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <a href="#" class="btn btn-default">Create Trade</a>
+        <input type="submit" class="button1" value="Create Trade"/>
+      
       </div>
     </div>
   </form>

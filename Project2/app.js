@@ -1,7 +1,8 @@
 //require modules
 const express= require('express');
 const morgan=require('morgan');
-const storyRoutes = require('./routes/storyRoutes');
+const mainRoutes = require('./routes/mainRoute');
+const tradeRoutes = require('./routes/tradeRoute');
 const methodOverride = require('method-override');
 const { render } = require('ejs');
 
@@ -26,8 +27,10 @@ app.get('/',(req,res)=>{
     res.render('index.ejs');
 });
 
-//request with this prefix that is /stories will be sent to this router 
-app.use('/stories',storyRoutes);
+app.use('/',mainRoutes);
+app.use('/trades',tradeRoutes);
+
+//app.use('/new',storyRoutes);
 
 //error handling
 app.use((req,res,next)=>{
