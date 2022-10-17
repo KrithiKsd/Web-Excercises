@@ -1,6 +1,6 @@
 <%- include('./partials/header.ejs') %>    
   
-<div class="container" style="background: linear-gradient(to right, rgba(204, 83, 51, 0.6), rgba(35, 7, 77, 0.6));;">
+<div class="container" style="background: linear-gradient(to right, rgba(204, 83, 51, 0.6), rgba(35, 7, 77, 0.6));">
     
     <div class="centered" style="color: white;">
 
@@ -8,7 +8,9 @@
 
         <div class="media">
           <div class="media-left media-top">
-            <img src="../images/A_Game_of_Thrones.jpg" class="media-object" style="width:250px" alt="A_Game_of_Thrones">
+            
+            <img src="<%=item.imageurl%>" class="media-object" style="width:200px; height: 200px;">
+
           </div>
           <div class="media-body">
             <h3 class="media-heading" >Category: <%=item.category%></h3>
@@ -21,8 +23,6 @@
         </div>
        
         <br>
-        <br>
-
         
         <form>
             <button type = 'submit' 
@@ -50,9 +50,6 @@
     </div>  
 </div>
 <br>
-<br>
-
-
 
 
 <%- include('./partials/footer.ejs') %> 
