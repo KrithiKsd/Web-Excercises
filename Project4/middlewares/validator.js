@@ -1,3 +1,5 @@
+const {body} = require('express-validator');
+const {validationResult} = require('express-validator');
 //checks if the id is valid or not
 exports.validateId = (req, res, next)=>{
     let id = req.params.id;

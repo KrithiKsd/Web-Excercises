@@ -9,6 +9,6 @@ router.get('/contact', controller.contact);
 
 router.get('/about', controller.about);
 
-router.get('/new',  controller.newtrade);
+router.get('/new', isLoggedIn, controller.newtrade);
 
 module.exports=router; 

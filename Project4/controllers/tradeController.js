@@ -31,6 +31,7 @@ exports.create = (req, res, next) => {
     
     let item = new model(req.body); //create a new trade document
     item.author= req.session.user;
+    console.log("name****"+req.session.user.firstName);
     //item.author= req.session.user._id;
     item.save()
     .then(item=> res.redirect('/trades'))
