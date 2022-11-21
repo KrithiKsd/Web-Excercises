@@ -1,0 +1,99 @@
+<%- include('./partials/header.ejs') %>  
+  
+<div class="container">
+  <br>
+
+    <div class="centered">
+      <div class="container-fluid">
+        <h4>Edit your trade information!</h4>
+        <br>
+        <% console.log(item.id) %>
+        <form class="form-horizontal" 
+        action = '/trades/<%= item.id%>?_method=PUT' method = 'POST'>
+        
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Name:</label>
+      <div class="col-sm-10">
+        <input type="text" id="name" name="name" placeholder="name" value="<%= item.name %>" required>           
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="category" >Category</label>
+      <div class="col-sm-10">
+       
+        <select class="form-control" id="category" name="category"  >
+          <option selected ><%= item.category %></option>
+          <option>Strategy Games</option>
+          <option>Party Games</option>
+          <option>Thematic Games</option>
+        </select>
+        
+    </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="details">Details:</label>
+      <div class="col-sm-10">   
+        <input type="text" class="form-control" id="details" placeholder="Enter details" name="details" value="<%= item.details %>" required minlength="10">       
+         
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="status">Status</label>
+        <div class="col-sm-10">
+          <input type="text" id="status" name="status" placeholder="status" value="<%= item.status %>" required>
+      </div>
+      </div>
+    
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="imageurl">Image URL</label>
+      <div class="col-sm-10">          
+        <input type="text" class="form-control" id="imageurl" name="imageurl" placeholder="imageURL" value="<%= item.imageurl %>" required>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="suggestedAge">Suggested Age:</label>
+      <div class="col-sm-10">       
+        <input type="text" class="form-control" id="suggestedAge" value="<%= item.suggestedAge %>" name="suggestedAge" required>     
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="publishedBy">Publisher:</label>
+      <div class="col-sm-10">          
+        <input type="text" class="form-control" id="publishedBy" value="<%= item.publishedBy %>" name="publishedBy" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="date">Date:</label>
+      <div class="col-sm-10">           
+        <input type="date" data-date-inline-picker="true" id="date" name="date" data-polyfill="all"
+        value="<%= item.date %>" required>
+    
+        <label>Start time:</label>
+      <input type="time" name="startTime" id="startTime" value="<%= item.startTime %>" required>
+
+      <label>End time:</label>
+      <input type="time" name="endTime" id="endTime" value="<%= item.endTime %>" required>
+      </div>
+    </div>
+    
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <input type="submit" class="button1" value="Update Trade">
+      
+      </div>
+    </div>
+  </form>
+
+    </div>  
+  </div>
+</div>
+
+<br>
+<br>
+
+
+<%- include('./partials/footer.ejs') %> 

@@ -1,0 +1,30 @@
+
+<%- include('../partials/header.ejs')%>
+<div class = "content" style="padding: 15px;">
+    <div class="centered" style="text-align:center">
+    <h2>Welcome, <%=user.firstName%></h2>
+    <img src="../images/profile.png" alt="profile" style="width:280px; height:200px;"  >
+    <br>
+    </div>
+    <%if(items.length){%>
+        <h3><p>You have created the following trades </p></h3>
+        <%items.forEach(item =>{%>
+            <a href='/trades/<%= item.id%>'><h4><p><%=item.name%></p></h4></a>
+            
+        <%});
+    }else{%>
+        <br>
+        <br>
+        <br>
+        <h3> <p>You have not yet created any trades! </p></h3>
+        <h5><p>To trade, please select the <b>Start Trading</b> option from the top-right corner, 
+            and provide the basic data about your boardgame.</p></h5>
+    <%}%>
+   
+    <br>
+    <br>
+    <br>
+    <br>
+   
+</div>
+    <%- include('../partials/footer.ejs')%>
