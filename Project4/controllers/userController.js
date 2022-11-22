@@ -10,8 +10,10 @@ exports.create = (req, res, next)=>{
         //res.send('Created a new item');
         let user = new model(req.body);//create a new item document
         user.save()//insert the document to the database
-        .then(user=> res.redirect('/users/login'))
-        .catch(err=>{
+        .then(()=>{
+            req.flash('success', 'Registered succesfully!');  
+            res.redirect('/users/login');
+        }).catch(err=>{
             if(err.name === 'ValidationError' ) {
                 req.flash('error', err.message);  
                 return res.redirect('/users/new');

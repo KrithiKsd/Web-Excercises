@@ -5,7 +5,7 @@
     <div class="centered" style="color: white;">
 
         <h3><%= item.name%></h3>
-        <h5 class="media-heading">Posted by <%= item.author.firstName + ' '+item.author.lastName%></h5>
+        <h5 class="media-heading">Hosted by <%= item.author.firstName + ' '+item.author.lastName%></h5>
 
 
         <div class="media">
@@ -28,7 +28,8 @@
         </div>
        
         <br>
-        <%if(user==item.author._id){%>
+        <%if(user){%>
+        <%if(user._id==item.author._id){%>
         <form>
             <button type = 'submit' 
             class="btn btn-lg btn-primary button-custom" 
@@ -38,6 +39,7 @@
             formmethod = "POST" formaction = "/trades/<%= item.id%>?_method=DELETE">Delete</button>
 
         </form>
+        <%}%>
         <%}%>
         <hr>
         <div class="media" style="text-align: center;">

@@ -2,17 +2,46 @@
 <%- include('../partials/header.ejs')%>
 <div class = "content" style="padding: 15px;">
     <div class="centered" style="text-align:center">
-    <h2>Welcome, <%=user.firstName%></h2>
     <img src="../images/profile.png" alt="profile" style="width:280px; height:200px;"  >
     <br>
     </div>
+    <h3><%=user.firstName%>'s trades</h3>
     <%if(items.length){%>
-        <h3><p>You have created the following trades </p></h3>
-        <%items.forEach(item =>{%>
-            <a href='/trades/<%= item.id%>'><h4><p><%=item.name%></p></h4></a>
-            
-        <%});
-    }else{%>
+        <table class='table table-bordered'>
+            <thead>
+                <tr>
+                    <th>BoardGame Name</th>
+                    <th>BoardGame Category</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            <%items.forEach(item=> {%>
+                <tr>
+                    <td>
+                        <p>
+                            <%=item.name%>
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            <%=item.category%>
+                        </p>
+                    </td>
+                    <td>
+                        <form class="form-middle">
+                            <button type = 'submit' class="btn btn" 
+                              formmethod = "GET" formaction = "/trades/<%=item.id%>/edit">Edit</button>
+                            
+                              <button type = 'submit' class="btn btn" 
+                              formmethod = "POST" formaction = "/trades/<%= item.id%>?_method=DELETE">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                <%});%>
+            </tbody>
+        </table>
+    <%}else{%>
         <br>
         <br>
         <br>

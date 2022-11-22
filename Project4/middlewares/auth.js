@@ -26,7 +26,7 @@ exports.isAuthor = (req,res,next)=>{
     Item.findById(id)
     .then(item=>{
         if(item){
-            if(item.author== req.session.user){
+            if(item.author._id== req.session.user._id){
                 return next();
             }else{
                 let err= new Error('Unauthorized to access the resource');
