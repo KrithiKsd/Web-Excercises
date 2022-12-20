@@ -1,0 +1,136 @@
+
+<%- include('../partials/header.ejs')%>
+<div class = "content" style="padding: 15px; height: 820px;">
+    <div class="centered" style="text-align:center">
+    <img src="../images/profile.png" alt="profile" style="width:200px; height:180px;"  >
+    <br>
+    </div>
+    <%if(items.length){%>
+        <h3><%=user.firstName%>'s trades</h3>
+        <table class='table table-bordered'>
+            <thead>
+                <tr>
+                    <th>BoardGame Name</th>
+                    <th>BoardGame Category</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            <%items.forEach(item=> {%>
+                <tr>
+                    <td>
+                        <p>
+                            <%=item.name%>
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            <%=item.category%>
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            <%=item.status%>
+                        </p>
+                    </td>
+                    <td>
+                        <form class="form-middle">
+                            <button type = 'submit' class="btn btn" 
+                              formmethod = "GET" formaction = "/trades/<%=item.id%>/edit">Edit</button>
+                            
+                              <button type = 'submit' class="btn btn" 
+                              formmethod = "POST" formaction = "/trades/<%= item.id%>?_method=DELETE">Delete</button>
+                              &nbsp; &nbsp;
+                              <% if(item.status == "Pending") { %>
+                                <button type="submit" class="btn btn-md btn-success" formmethod="GET" formaction="/trades/<%=item.offerId%>/manage">
+                                    Manage Offer
+                                    </button>
+                              <% } %>
+                        </form>
+                    </td>
+                </tr>
+                <%});%>
+            </tbody>
+        </table>
+    <%}else{%>
+        <br>
+        <br>
+        <br>
+        <h3> <p>You have not yet created any trades! </p></h3>
+        <h5><p>To trade, please select the <b>Start Trading</b> option from the top-right corner, 
+            and provide the basic data about your boardgame.</p></h5>
+    <%}%>
+   
+    <br>
+  
+    
+    <% if(offers.length) { %>
+        <h4> <b> Your Offers </b> </h4>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>S. No</th>
+                <th>Item Name</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+                <% offers.forEach((offerItem, index) => { %>
+                    <tr>
+                        <td> <%=index + 1 %></td>
+                        <td>  <a href="/trades/<%=offerItem.id%>"> <%=offerItem.name %> </a></td>
+                        <td> <%=offerItem.category%> </td>
+                        <td> <%=offerItem.status%> </td>
+                        <td>
+                            <form>
+                                <button type="submit" class="btn btn-md btn-danger" formmethod="POST" formaction="/trades/<%=offerItem.offerId%>/cancelOffer?_method=DELETE">
+                                    Cancel Offer
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                        <%}) %>
+                </tbody>
+            </table>  
+            <%}%>
+          
+            <br>
+            <% if(watchList.length) { %>
+            <h4> <b> Your Watched Trades </b> </h4>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>S. No</th>
+                    <th>Item Name</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% watchList.forEach((watchedItem, index) => { %>
+                    <tr>
+                        <td> <%=index + 1 %></td>
+                        <td>  <a href="/trades/<%=watchedItem.id%>"> <%=watchedItem.name %> </a></td>
+                        <td> <%=watchedItem.category%> </td>
+                        <td> <%=watchedItem.status%> </td>
+                        <td>
+                            <form>
+                                <button type="submit" class="btn btn-md btn-primary" formmethod="POST" formaction="/trades/<%=watchedItem.id%>/unwatch?_method=PUT">
+                                    Unwatch
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                        <%}) %>
+                </tbody>
+            </table>  
+            <%}%>
+            <br>
+            <br>
+   
+</div>
+    <%- include('../partials/footer.ejs')%>

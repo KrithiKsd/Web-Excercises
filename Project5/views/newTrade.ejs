@@ -1,0 +1,99 @@
+<%- include('./partials/header.ejs') %>  
+  
+<div class="container">
+  <br>
+
+    <div class="centered">
+      <div class="container-fluid">
+        <h4>Enter your trade information!</h4>
+        <br>
+  <form class="form-horizontal" action = '/trades' method = 'POST'>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Name:</label>
+      <div class="col-sm-10">          
+        <input type="text" class="form-control" id="name" placeholder="Enter BG Name" name="name" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="category">Category</label>
+      <div class="col-sm-10">
+
+        <select class="form-control" id="category" name="category" required>
+          <option value="" selected disabled>Please select category</option>
+          <option>Strategy Games</option>
+          <option>Party Games</option>
+          <option>Thematic Games</option>
+        </select>
+      
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="details">Details:</label>
+      <div class="col-sm-10">   
+        <input type="text" class="form-control" id="details" placeholder="Enter details" name="details"  required minlength="10">       
+         
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="imageurl">Image URL</label>
+      <div class="col-sm-10">          
+        <input type="text" class="form-control" id="imageurl" name="imageurl" placeholder="imageURL" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="suggestedAge">Suggested Age:</label>
+      <div class="col-sm-10">       
+        <input type="text" class="form-control" id="suggestedAge" placeholder="Enter suggested age" name="suggestedAge" required>     
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="publishedBy">Publisher:</label>
+      <div class="col-sm-10">          
+        <input type="text" class="form-control" id="publishedBy" placeholder="Enter BG publisher" name="publishedBy" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="status">Status:</label>
+      <div class="col-sm-10">       
+        
+        <select class="form-control" id="status" name="status">
+          <option value="Available">Available</option>
+          <option value="Offer Pending">Pending</option>
+          <option value="Traded">Traded</option>
+      </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="date">Date:</label>
+      <div class="col-sm-10">           
+        <input type="date" data-date-inline-picker="true" id="date" name="date" data-polyfill="all"
+        required>
+
+        <label>Start time:</label>
+    
+      <input type="time" name="startTime" id="startTime" required>
+      <label>End time:</label>
+      <input type="time" name="endTime" id="endTime" required>
+      </div>
+    </div>
+   
+    
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <input type="submit" class="button1" value="Create Trade">
+      
+      </div>
+    </div>
+  </form>
+
+    </div>  
+  </div>
+</div>
+
+<hr>
+<br>
+<br>
+
+
+<%- include('./partials/footer.ejs') %> 

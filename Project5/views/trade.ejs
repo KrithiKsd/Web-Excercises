@@ -1,0 +1,82 @@
+<%- include('./partials/header.ejs') %>    
+  
+<div class="container" style="background: linear-gradient(to right, rgba(204, 83, 51, 0.6), rgba(35, 7, 77, 0.6)); height: 550px;">
+    
+    <div class="centered" style="color: white;">
+
+        <h3><%= item.name%></h3>
+        <h5 class="media-heading">Hosted by <%= item.author.firstName + ' '+item.author.lastName%></h5>
+
+
+        <div class="media">
+          <div class="media-left media-top">
+            
+            <img src="<%=item.imageurl%>" class="media-object" alt="Lights" style="width:200px; height: 200px;">
+
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading" >Category: <%=item.category%></h4>
+            <h4 class="media-heading">Published By: <%=item.publishedBy%></h4>
+            <h4 class="media-heading">Suggested Age: <%=item.suggestedAge%></h4>
+            <h4 class="media-heading">Status: <%=item.status%></h4>
+            <br>
+            <h5 class="media-heading">Created On: <%=item.date%></h5>
+            <h5 class="media-heading">Duration: <%=item.startTime%> - <%=item.endTime%></h5>
+            <p><%=item.details%> </p>
+           
+            </div>
+        </div>
+       
+        <br>
+        <%if(user){%>
+        <%if(user._id==item.author._id){%>
+        <form>
+            <button type = 'submit' 
+            class="btn btn-lg btn-primary button-custom" 
+            formmethod = "GET" formaction = "/trades/<%=item.id%>/edit">Edit</button>
+            
+            <button type = 'submit' class="btn btn-lg btn-primary button-custom" 
+            formmethod = "POST" formaction = "/trades/<%= item.id%>?_method=DELETE">Delete</button>
+
+        </form>
+        <%}%>
+        <%}%>
+        <hr>
+        <div class="media" style="text-align: center;">
+        <%if(!user){%>
+        <h5><b>Do you want to trade this board game?</b></h5>  
+        <br>
+        <div class="action-btns text-center">  
+                <a href="/users/login" class="btn btn-lg btn-primary button-custom"> Trade Now 
+                </a> &nbsp; &nbsp;
+                <a href="/users/login" class="btn btn-lg btn-default">
+                    Watch Now 
+                </a>
+            <%}else{%>
+                <%if(user._id!=item.author._id){%>
+                    <form>
+                    <% if(item.status === 'Available' ) { %>
+                        <button type="submit"  class="btn btn-md btn-primary button-custom" formmethod="GET" formaction="/trades/<%=item.id%>/trade"> Trade It
+                    <%}%> 
+                    
+                    <%if(item.watchedBy.includes(user._id.valueOf())) { %>  
+                        <% console.log('yes it has**'+user._id.valueOf())  %>
+                        <button type="submit"  class="btn btn-md btn-primary " formmethod="POST" formaction="/trades/<%=item.id%>/unwatch?_method=PUT"> Unwatch
+                        </button> 
+                    <%} else { %>
+                        <% console.log('no it does not have**'+user._id.valueOf())  %>
+                        <button type="submit"  class="btn btn-md btn-primary " formmethod="POST" formaction="/trades/<%=item.id%>/watch"> Watch</button>
+                   <% } %>
+                  </form>
+                <%}%>
+        <%}%>
+        </div>
+        <br>  <br>
+        </div>
+
+    </div>  
+</div>
+<br>
+
+
+<%- include('./partials/footer.ejs') %> 

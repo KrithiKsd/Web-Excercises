@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Game Swap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link  href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <script src="/bootstrap/jquery/jquery.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.min.js"></script>
+  <link property="stylesheet" href="/bootstrap/css/style.css">
+
+</head>
+<body>
+  <div class="header">
+  <div class="row">
+    <div class="col-sm-8">
+       <a href="/"> <img src="/images/logo.png" class="img-circle" alt="Cinque Terre"> </a>
+    </div>
+  <div class="col-sm-4">
+  <div class=".btn-group" style="text-align: right;">
+   
+    
+    <%if(!user){%>
+      <a href='/users/new' class="btn btn">Sign Up</a>
+      <a href='/users/login' class="btn btn">Login</a>
+  <%}else{%>
+      <a href="/trades/new" class="btn btn">Start Trading!</a>
+      <a href='/users/profile' class="btn btn">Profile</a>
+      <a href='/users/logout' class="btn btn">Logout</a>
+      <h4 style="padding-right: 80px;">Welcome, <%=userName%></h4>
+     
+  <%}%>
+
+  
+  </div>
+  </div>
+</div>
+  </div>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/trades">Trades</a>
+          <a class="navbar-brand" href="/">Home</a>
+            <a class="navbar-brand" href="/about">About</a>
+            <a class="navbar-brand" href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </nav> 
+
+
+<% if(errorMessages.length > 0) {%>
+  <% errorMessages.forEach(message=>{%>
+      <div class='error' style="background: rgba(255, 102, 51, 0.7);
+      color: #fff; width: 100%; text-align: center; padding: 10px;" >
+          <%=message%>
+      </div>
+      <%});%>
+          <%}%>
+
+              <% if(successMessages.length > 0) {%>
+
+                  <% successMessages.forEach(message=>{%>
+                      <div class='success' style="background: rgba(108, 192, 112, 0.7);
+                      color: #fff; width: 100%; text-align: center; padding: 10px;">
+                          <%=message%>
+                      </div>
+                      <%});%>
+                          <%}%>
+                          <br>
